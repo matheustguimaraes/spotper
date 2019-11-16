@@ -1,4 +1,4 @@
--- Create database
+-- Criar banco de dados
 CREATE DATABASE spotper
 ON 
 	PRIMARY (
