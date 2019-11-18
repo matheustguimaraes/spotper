@@ -1,4 +1,5 @@
 -- Criar banco de dados
+
 CREATE DATABASE spotper
 ON 
 	PRIMARY (
@@ -8,7 +9,7 @@ ON
 		FILEGROWTH = 30%
 	),
 
-	FILEGROUP spoter_fg01 (
+	FILEGROUP spotper_fg01 (
 		NAME = 'spotper_001',
 		FILENAME = 'C:\BDSpotPer\spotper_001.ndf',
 		SIZE = 5120KB,
@@ -20,7 +21,7 @@ ON
 		FILEGROWTH = 20%
 	),
 
-	FILEGROUP spoter_fg02 (
+	FILEGROUP spotper_fg02 (
 		NAME = 'spotper_003',
 		FILENAME = 'C:\BDSpotPer\spotper_003.ndf',
 		SIZE = 5120KB,
