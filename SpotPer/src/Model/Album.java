@@ -3,7 +3,7 @@ package Model;
 
 public class Album {
     private int id, codGravadora;
-    private String nomeGravadora, descricao, tipoCompra, dtGravacao, dtCompra;
+    private String descricao, tipoCompra, dtGravacao, dtCompra;
     private double precoCompra;
 
     public int getId() {
@@ -21,15 +21,7 @@ public class Album {
     public void setCodGravadora(int codGravadora) {
         this.codGravadora = codGravadora;
     }
-
-    public String getNomeGravadora() {
-        return nomeGravadora;
-    }
-
-    public void setNomeGravadora(String nomeGravadora) {
-        this.nomeGravadora = nomeGravadora;
-    }
-
+    
     public String getDescricao() {
         return descricao;
     }
