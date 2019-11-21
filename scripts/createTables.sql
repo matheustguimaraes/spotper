@@ -60,7 +60,6 @@ CREATE TABLE album (
 	dt_gravacao DATE NOT NULL,
 	dt_compra DATE,
 	preco_compra DECIMAL(10,2),
-	nome NVARCHAR(50) NOT NULL,
 
 	CONSTRAINT album_PK PRIMARY KEY (id),
 	CONSTRAINT album_gravadora_FK FOREIGN KEY (cod_gravadora)
