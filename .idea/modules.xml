@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SpotPer/SpotPer.iml" filepath="$PROJECT_DIR$/SpotPer/SpotPer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpotPer.iml" filepath="$PROJECT_DIR$/SpotPer.iml" />
     </modules>
   </component>
 </project>
