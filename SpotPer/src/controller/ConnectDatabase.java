@@ -1,5 +1,6 @@
 package controller;
 
+import java.net.ConnectException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
@@ -9,11 +10,11 @@ import java.sql.DriverManager;
 
 public class ConnectDatabase {
     private Connection conn;
+    private static final String userName = "sa";
+    private static final String password = "@admin123";
+    private static final String url = "jdbc:sqlserver://localhost;database=spotper";
 
-    public ConnectDatabase() {
-        String userName = "sa";
-        String password = "@admin123";
-        String url = "jdbc:sqlserver://localhost;database=spotper";
+    public Connection openConnection() {
         try {
             Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
             conn = DriverManager.getConnection(url, userName, password);
@@ -21,6 +22,7 @@ public class ConnectDatabase {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return conn;
     }
 
     public void closeConnection() {
@@ -34,6 +36,7 @@ public class ConnectDatabase {
 
     public static void main(String[] args) {
         ConnectDatabase databaseConn = new ConnectDatabase();
+        databaseConn.openConnection();
         System.out.println("test connection");
         databaseConn.closeConnection();
     }
