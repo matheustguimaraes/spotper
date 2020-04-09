@@ -22,17 +22,6 @@ public class Playlist {
                 System.out.print(columnValue + " " + rsmd.getColumnName(i));
             }
             System.out.println("");
-
-//            // Retrieve by column name
-//            int id = rs.getInt("id");
-//            String nome = rs.getString("nome");
-//            String dtCriacao = rs.getString("dt_criacao");
-//            double tmpTotalExecucao = rs.getInt("tempo_total_execucao");
-//            // Display values
-//            System.out.print("ID: " + id);
-//            System.out.print("\t Name: " + nome);
-//            System.out.print("\t creationDate: " + dtCriacao);
-//            System.out.println("\t totalExecutionTime: " + tmpTotalExecucao);
         }
         rs.close();
         connectDatabase.closeConnection();
