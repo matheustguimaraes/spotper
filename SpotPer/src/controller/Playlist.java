@@ -22,8 +22,6 @@ public class Playlist extends ConnectSQL {
         }
         rs.close();
         connectDatabase.closeConnection();
-
-        System.out.println("Goodbye!");
     }
 
     public void addPlaylist(int id, String nome, String dtCriacao, double tmpTotalExecucao) throws SQLException {

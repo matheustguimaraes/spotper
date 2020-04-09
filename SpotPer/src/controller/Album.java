@@ -22,8 +22,6 @@ public class Album extends ConnectSQL {
         }
         rs.close();
         connectDatabase.closeConnection();
-
-        System.out.println("Goodbye!");
     }
 
     public void addAlbum(int id, int cod_gravadora, String descricao, String tipo_compra,
