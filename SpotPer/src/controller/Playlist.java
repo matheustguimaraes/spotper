@@ -2,13 +2,10 @@ package controller;
 
 import java.sql.*;
 
-public class Playlist {
-    private final ConnectDatabase connectDatabase = new ConnectDatabase();
-    private final Connection conn = connectDatabase.openConnection();
-    Statement stmt = null;
+public class Playlist extends ConnectSQL {
 
     public void getPlaylist() throws SQLException {
-        stmt = conn.createStatement();
+        Statement stmt = conn.createStatement();
         String sql = "SELECT * FROM playlist";
         ResultSet rs = stmt.executeQuery(sql);
         ResultSetMetaData rsmd = rs.getMetaData();
