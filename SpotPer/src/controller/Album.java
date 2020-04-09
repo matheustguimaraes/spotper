@@ -2,26 +2,12 @@ package controller;
 
 import java.sql.*;
 
-public class Album extends ConnectSQL {
+public class Album implements ConnectSQL {
+    private final Utils utils = new Utils();
 
     public void getAlbum() throws SQLException {
-        Statement stmt = conn.createStatement();
         String sql = "SELECT * FROM album";
-        ResultSet rs = stmt.executeQuery(sql);
-        ResultSetMetaData rsmd = rs.getMetaData();
-        int columnsNumber = rsmd.getColumnCount();
-
-        while (rs.next()) {
-
-            for (int i = 1; i <= columnsNumber; i++) {
-                if (i > 1) System.out.print(",  ");
-                String columnValue = rs.getString(i);
-                System.out.print(columnValue + " " + rsmd.getColumnName(i));
-            }
-            System.out.println("");
-        }
-        rs.close();
-        connectDatabase.closeConnection();
+        utils.printTable(sql);
     }
 
     public void addAlbum(int id, int cod_gravadora, String descricao, String tipo_compra,

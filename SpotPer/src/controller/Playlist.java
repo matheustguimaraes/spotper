@@ -2,26 +2,12 @@ package controller;
 
 import java.sql.*;
 
-public class Playlist extends ConnectSQL {
+public class Playlist implements ConnectSQL {
+    private final Utils utils = new Utils();
 
     public void getPlaylist() throws SQLException {
-        Statement stmt = conn.createStatement();
         String sql = "SELECT * FROM playlist";
-        ResultSet rs = stmt.executeQuery(sql);
-        ResultSetMetaData rsmd = rs.getMetaData();
-        int columnsNumber = rsmd.getColumnCount();
-
-        while (rs.next()) {
-
-            for (int i = 1; i <= columnsNumber; i++) {
-                if (i > 1) System.out.print(",  ");
-                String columnValue = rs.getString(i);
-                System.out.print(columnValue + " " + rsmd.getColumnName(i));
-            }
-            System.out.println("");
-        }
-        rs.close();
-        connectDatabase.closeConnection();
+        utils.printTable(sql);
     }
 
     public void addPlaylist(int id, String nome, String dtCriacao, double tmpTotalExecucao) throws SQLException {
