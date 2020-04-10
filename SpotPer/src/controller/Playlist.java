@@ -8,6 +8,7 @@ public class Playlist implements ConnectSQL {
     public void getPlaylist() throws SQLException {
         String sql = "SELECT * FROM playlist";
         utils.printTable(sql);
+        connectDatabase.closeConnection();
     }
 
     public void addPlaylist(int id, String nome, String dtCriacao, double tmpTotalExecucao) throws SQLException {

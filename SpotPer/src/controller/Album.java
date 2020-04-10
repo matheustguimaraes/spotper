@@ -8,6 +8,7 @@ public class Album implements ConnectSQL {
     public void getAlbum() throws SQLException {
         String sql = "SELECT * FROM album";
         utils.printTable(sql);
+        connectDatabase.closeConnection();
     }
 
     public void addAlbum(int id, int cod_gravadora, String descricao, String tipo_compra,
